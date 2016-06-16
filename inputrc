@@ -1,19 +1,23 @@
-#"\e[A": history-search-backward
-#"\e[B": history-search-forward
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 set completion-ignore-case on
 set show-all-if-ambiguous on
 #TAB: menu-complete
 
-set editing-mode vi
-$if mode=vi
-	set keymap vi-command
-		# these are for vi-command mode
-		"\e[A": history-search-backward
-		"\e[B": history-search-forward
-        "\C-l": clear-screen
-	set keymap vi-insert
-		# these are for vi-insert mode
-		"\e[A": history-search-backward
-		"\e[B": history-search-forward
-        "\C-l": clear-screen
-$endif
+#set editing-mode vi
+#$if mode=vi
+#	set keymap vi-command
+#		# these are for vi-command mode
+#		"\e[A": history-search-backward
+#		"\e[B": history-search-forward
+#        "\C-l": clear-screen
+#        "\C-a": beginning-of-line
+#        "\C-e": end-of-line
+#	set keymap vi-insert
+#		# these are for vi-insert mode
+#		"\e[A": history-search-backward
+#		"\e[B": history-search-forward
+#        "\C-l": clear-screen
+#        "\C-a": beginning-of-line
+#        "\C-e": end-of-line
+#$endif
