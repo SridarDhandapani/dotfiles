@@ -11,7 +11,6 @@ filetype plugin indent on      " required
 
 " Automatic reloading of .vimrc file after save
 autocmd! bufwritepost .vimrc source %
-
 " Switched to Vundle from Pathogen for it's simplicity and clarity...
 " First clone Vundle from GitHub
 "
@@ -497,7 +496,7 @@ if &diff
   hi DiffAdd      term=bold cterm=bold,underline ctermfg=4 ctermbg=NONE
   hi DiffChange   term=bold cterm=bold,underline ctermfg=5 ctermbg=NONE
   hi DiffDelete   term=bold cterm=bold,underline ctermfg=6 ctermbg=NONE
-  hi DiffText     term=reverse cterm=bold,underline  ctermfg=1
+  hi DiffText     term=reverse cterm=bold,underline  ctermfg=1 ctermbg=LightRed
 endif
 
 "Auto-pairs Fly Mode
