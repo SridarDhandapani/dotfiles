@@ -231,6 +231,12 @@ set eadirection=both
 "preserve equal window split on terminal resize
 autocmd VimResized * wincmd =
 
+"Do not indent when pasting multiple lines
+set paste
+
+"Enable copy/paste on Mac OSX
+set clipboard=unnamed
+
 "
 "-------------------------------------------------------------------------------
 "When editing a file, always jump to the last known cursor position.
