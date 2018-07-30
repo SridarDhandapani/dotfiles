@@ -25,7 +25,7 @@ call vundle#begin()
 
 "Plugins                                                               {{{-
 "let Vundle manage Vundle "required!
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-rails.git'
@@ -141,6 +141,12 @@ Plugin 'fatih/vim-go'
 "Typescript
 Plugin 'Quramy/tsuquyomi'
 
+"Hashicorp Terraform
+Plugin 'hashivim/vim-terraform'
+
+"Cheat.sh
+Plugin 'dbeniamine/cheat.sh-vim'
+
 "Now complete vundle plugin setup
 call vundle#end()   "required
 
@@ -255,6 +261,11 @@ let g:tagbar_autofocus = 1
 
 "NERDTree (better file browser) toggle
 map <F3> :NERDTreeToggle<CR>
+"Ignore files on NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+"NERDCommenter
+let g:NERDDefaultAlign = 'left'
 
 "tab navigation
 map tn :tabn<CR>
@@ -336,9 +347,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$',
   \ }
 
-"Ignore files on NERDTree
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-
 "simple recursive grep
 command! -nargs=1 RecurGrep lvimgrep /<args>/gj ./**/*.* | lopen | set nowrap
 command! -nargs=1 RecurGrepFast silent exec 'lgrep! <q-args> ./**/*.*' | lopen
@@ -350,13 +358,13 @@ nmap ,wr :RecurGrepFast <cword><CR>
 
 "python-mode settings
 "Load the whole plugin
-"let g:pymode = 1
+let g:pymode = 0
 "Load run code plugin
-let g:pymode_run = 1
+let g:pymode_run = 0
 "Key for run python code
 let g:pymode_run_key = '<leader>r'
 "Load pylint code plugin
-let g:pymode_lint = 1
+let g:pymode_lint = 0
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 
 "Check code every save
@@ -366,12 +374,15 @@ let g:pymode_lint_write = 0
 let g:pymode_rope = 0
 "Enable python folding
 let g:pymode_folding = 1
+set foldlevel=99
 "Enable python objects and motion
 let g:pymode_motion = 1
 "Auto fix vim python paths if virtualenv enabled
 let g:pymode_virtualenv = 1
 "Set default pymode python options
 let g:pymode_options = 1
+"Set default python version
+let g:pymode_python = 'python3'
 
 let g:pep8_map='<leader>8'
 
@@ -551,3 +562,6 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+
+"Terraform
+let g:terraform_fmt_on_save = 1
