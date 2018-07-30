@@ -1,5 +1,6 @@
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\C-b": unix-filename-rubout
 set completion-ignore-case on
 set show-all-if-ambiguous on
 #TAB: menu-complete
