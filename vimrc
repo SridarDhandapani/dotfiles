@@ -66,7 +66,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 
 "Python mode (indentation, doc, refactor, lints, code checking, motion and
 "operators, highlighting, run and ipdb breakpoints)
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
 
 "Snippets manager (SnipMate), dependencies, and snippets repo
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -101,7 +101,7 @@ Plugin 'YankRing.vim'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'vim-ruby/vim-ruby'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/autoproto.vim'
@@ -358,9 +358,9 @@ nmap ,wr :RecurGrepFast <cword><CR>
 
 "python-mode settings
 "Load the whole plugin
-let g:pymode = 0
+let g:pymode = 1
 "Load run code plugin
-let g:pymode_run = 0
+let g:pymode_run = 1
 "Key for run python code
 let g:pymode_run_key = '<leader>r'
 "Load pylint code plugin
@@ -382,7 +382,13 @@ let g:pymode_virtualenv = 1
 "Set default pymode python options
 let g:pymode_options = 1
 "Set default python version
-let g:pymode_python = 'python3'
+let g:pymode_python = 'python'
+"Disable breakpoints
+let g:pymode_breakpoint = 0
+"Code completion
+"let g:pymode_rope_completion = 1
+"let g:pymode_rope_complete_on_dot = 1
+"let g:pymode_rope_completion_bind = '<C-Space>'
 
 let g:pep8_map='<leader>8'
 
@@ -436,7 +442,8 @@ set nowritebackup
 syntax on
 
 "set guifont=Inconsolata:h13
-set guifont=Source\ Code\ Pro:h12
+"set guifont=Source\ Code\ Pro:h12
+set guifont=DroidSansMono\ Nerd\ Font\ 12
 let mapleader=","
 
 "smart autoindending when starting a new line
@@ -517,7 +524,7 @@ if &diff
 endif
 
 "Auto-pairs Fly Mode
-let g:AutoPairsFlyMode = 0
+let g:AutoPairsFlyMode = 1
 
 "open help in new tab
 cabbrev help tab help
@@ -534,6 +541,14 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+"let g:airline_left_sep = '\ue0b0'
+"let g:airline_left_alt_sep = '\ueob1'
+"let g:airline_right_sep = '\ue0b2'
+"let g:airline_right_alt_sep = '\ue0b3'
+"let g:airline_symbols.branch = '\ue0a0'
+"let g:airline_symbols.readonly = '\ue0a2'
+"let g:airline_symbols.linenr = '\ue0a1'
 
 "let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled=1
@@ -565,3 +580,6 @@ let g:go_fmt_command = "goimports"
 
 "Terraform
 let g:terraform_fmt_on_save = 1
+
+"fzf - fuzzy finder
+set rtp+=/usr/local/opt/fzf
