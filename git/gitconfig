@@ -1,0 +1,34 @@
+[user]
+	name = Sridar Dhandapani
+	email = sridar@gmail.com
+	signingKey = 708EED0342097E76
+[core]
+	editor = vim
+	excludesfile = /Users/sridar/.gitignore_global
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+	keepBackup = false
+[difftool "meld"]
+	cmd = meld $LOCAL $REMOTE
+[merge]
+	tool = meld
+[mergetool]
+	keepBackup = false
+[mergetool "meld"]
+	cmd = meld $LOCAL $MERGED $REMOTE --auto-merge --output=$MERGED
+	trustExitCode = true
+[commit]
+	template = /Users/sridar/.stCommitMsg
+[difftool "sourcetree"]
+	cmd = /Applications/Meld.app/Contents/MacOS/Meld $LOCAL $REMOTE
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Meld.app/Contents/MacOS/Meld $LOCAL $BASE $REMOTE --auto-merge --output=$MERGED
+	trustExitCode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
